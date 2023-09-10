@@ -1,7 +1,12 @@
 {
-  "name": "tasksfile",
+  "name": "@zhangyunjie/tasksfile",
   "version": "5.1.1",
   "description": "Minimalistic task runner for node.js",
+  "author": "zhangyunjie <1520420636@qq.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "build",
     "system",
@@ -16,36 +21,17 @@
   "scripts": {
     "lint": "tslint -c tslint.json 'src/*.ts' 'test/**/*.ts'",
     "build": "tsc",
-    "test": "yarn lint && yarn build && yarn clean:sandbox && jest --coverage",
+    "test": "npm lint && npm build && npm clean:sandbox && jest --coverage",
     "test:unit": "jest ./src/",
     "test:e2e": "jest ./test/",
-    "clean": "rm -rf node_modules && yarn clean:build && yarn clean:sandbox",
+    "clean": "rm -rf node_modules && npm clean:build && npm clean:sandbox",
     "clean:build": "rm -rf ./lib",
     "clean:sandbox": "rm -rf ./test/e2e/sandbox/node_modules && mkdir -p ./test/sandbox/node_modules/.bin",
     "sandbox:task": "cd ./test/sandbox && ../../bin/task.js"
   },
-  "lint-staged": {
-    "src/*.{ts,tsx}": [
-      "tslint --fix",
-      "git add"
-    ]
-  },
-  "engines": {
-    "node": ">=6.11.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pawelgalazka/tasksfile.git"
-  },
-  "author": "Pawel Galazka",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pawelgalazka/tasksfile/issues"
-  },
-  "homepage": "https://github.com/pawelgalazka/tasksfile#readme",
   "dependencies": {
-    "@pawelgalazka/cli": "2.0.3",
-    "@pawelgalazka/shell": "2.0.0",
+    "@zhangyunjie/cli": "2.0.4",
+    "@zhangyunjie/shell": "2.0.0",
     "chalk": "2.3.0"
   },
   "devDependencies": {
@@ -63,5 +49,11 @@
     "tslint-config-prettier": "1.17.0",
     "tslint-plugin-prettier": "2.0.1",
     "typescript": "3.2.2"
+  },
+  "lint-staged": {
+    "src/*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ]
   }
 }

@@ -4,20 +4,20 @@ import {
   CommandsModule,
   Middleware,
   useMiddlewares
-} from '@pawelgalazka/cli'
-import { Logger } from '@pawelgalazka/cli/lib/utils/logger'
+} from '@zhangyunjie/cli'
+import { Logger } from '@zhangyunjie/cli/lib/utils/logger'
 import {
   IAsyncShellOptions,
   IShellOptions,
   ISyncShellOptions,
   shell,
   ShellError
-} from '@pawelgalazka/shell'
+} from '@zhangyunjie/shell'
 import chalk from 'chalk'
 import path from 'path'
 
-export { help, rawArgs } from '@pawelgalazka/cli'
-export { prefixTransform } from '@pawelgalazka/shell'
+export { help, rawArgs } from '@zhangyunjie/cli'
+export { prefixTransform } from '@zhangyunjie/shell'
 
 const commandNotFoundHandler: Middleware = next => args => {
   const { command } = args
