@@ -1,11 +1,11 @@
-import { shell } from '@zhangyunjie/shell'
+import { shell } from '@yun-jie/shell'
 import chalk from 'chalk'
 
 import { sh } from './index'
 
 const shellMock = shell as jest.Mock
 
-jest.mock('@zhangyunjie/shell')
+jest.mock('@yun-jie/shell')
 
 process.env = { DEFAULT_ENV: 'default env' }
 
@@ -22,7 +22,7 @@ describe('sh()', () => {
     }
   })
 
-  it('calls original @zhangyunjie/shell function with the same command', () => {
+  it('calls original @yun-jie/shell function with the same command', () => {
     sh('test command', undefined, logger)
     expect(shellMock).toHaveBeenCalledTimes(1)
     expect(shellMock).toHaveBeenCalledWith('test command', expect.anything())
@@ -34,7 +34,7 @@ describe('sh()', () => {
     expect(logger.log).toHaveBeenCalledWith(chalk.bold('test command'))
   })
 
-  it('calls original @zhangyunjie/shell with default options values', () => {
+  it('calls original @yun-jie/shell with default options values', () => {
     sh('test command', undefined, logger)
     expect(shellMock).toHaveBeenCalledTimes(1)
     expect(shellMock).toHaveBeenCalledWith(expect.anything(), {
@@ -45,7 +45,7 @@ describe('sh()', () => {
     })
   })
 
-  it('calls original @zhangyunjie/shell with given options values', () => {
+  it('calls original @yun-jie/shell with given options values', () => {
     sh(
       'test command',
       {

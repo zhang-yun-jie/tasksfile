@@ -1,5 +1,5 @@
 {
-  "name": "@zhangyunjie/tasksfile",
+  "name": "@yun-jie/tasksfile",
   "version": "5.1.1",
   "description": "Minimalistic task runner for node.js",
   "author": "zhangyunjie <1520420636@qq.com>",
@@ -18,6 +18,10 @@
   "bin": {
     "task": "bin/task.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhang-yun-jie/tasksfile.git"
+  },
   "scripts": {
     "lint": "tslint -c tslint.json 'src/*.ts' 'test/**/*.ts'",
     "build": "tsc",
@@ -30,8 +34,8 @@
     "sandbox:task": "cd ./test/sandbox && ../../bin/task.js"
   },
   "dependencies": {
-    "@zhangyunjie/cli": "2.0.4",
-    "@zhangyunjie/shell": "2.0.0",
+    "@yun-jie/cli": "2.0.3",
+    "@yun-jie/shell": "2.0.0",
     "chalk": "2.3.0"
   },
   "devDependencies": {

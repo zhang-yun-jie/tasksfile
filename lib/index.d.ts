@@ -1,8 +1,8 @@
-import { CommandsModule } from '@zhangyunjie/cli';
-import { Logger } from '@zhangyunjie/cli/lib/utils/logger';
-import { IAsyncShellOptions, ISyncShellOptions } from '@zhangyunjie/shell';
-export { help, rawArgs } from '@zhangyunjie/cli';
-export { prefixTransform } from '@zhangyunjie/shell';
+import { CommandsModule } from '@yun-jie/cli';
+import { Logger } from '@yun-jie/cli/lib/utils/logger';
+import { IAsyncShellOptions, ISyncShellOptions } from '@yun-jie/shell';
+export { help, rawArgs } from '@yun-jie/cli';
+export { prefixTransform } from '@yun-jie/shell';
 export declare function sh(command: string, options: IAsyncShellOptions, logger?: Logger): Promise<string | null>;
 export declare function sh(command: string, options?: ISyncShellOptions, logger?: Logger): string | null;
 export declare function cli(definition: CommandsModule): void;
